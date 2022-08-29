@@ -9,7 +9,7 @@ import {
 import { validatePassword } from '../services/user.service'
 import { signJwt } from '../utils/jwt'
 
-export async function createUserSessionHandler(req: Request, res: Response) {
+export async function createUserSessionController(req: Request, res: Response) {
   // Validate the user's password
   const user = await validatePassword(req.body)
 
@@ -40,7 +40,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
     })
 }
 
-export async function getUserSessionsHandler(req: Request, res: Response) {
+export async function getUserSessionsController(req: Request, res: Response) {
   const userId = res.locals.user._id
   findSessions({ user: userId, valid: true })
     .then((sessions) => {
@@ -50,7 +50,7 @@ export async function getUserSessionsHandler(req: Request, res: Response) {
       return res.status(409).send(error)
     })
 }
-export async function deleteUserSessionHandler(req: Request, res: Response) {
+export async function deleteUserSessionController(req: Request, res: Response) {
   const sessionId = res.locals.user.session
   if (!sessionId) {
     return res.status(401)
