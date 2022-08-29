@@ -3,12 +3,12 @@ import {
   createUserSessionController,
   deleteUserSessionController,
   getUserSessionsController,
-} from '../controllers/session.controller'
-import { createUserController } from '../controllers/user.controller'
-import { getUserMiddleware } from '../middlewares/getUserMiddleware'
-import { validateSchemaMiddleware } from '../middlewares/validateSchemaMiddleware'
-import { createSessionSchema } from '../schemas/session.schema'
-import { createUserSchema } from '../schemas/user.schema'
+} from 'controllers/session.controller'
+import { createUserController } from 'controllers/user.controller'
+import { getUserMiddleware } from 'middlewares/getUserMiddleware'
+import { validateSchemaMiddleware } from 'middlewares/validateSchemaMiddleware'
+import { createSessionSchema } from 'schemas/session.schema'
+import { createUserSchema } from 'schemas/user.schema'
 
 export const routes = (app: Express) => {
   app.post(

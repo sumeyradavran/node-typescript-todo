@@ -1,7 +1,7 @@
 import { get } from 'lodash'
 import { Request, Response, NextFunction } from 'express'
-import { verifyJwt } from '../utils/jwt'
-import { reIssueAccessToken } from '../services/session.service'
+import { verifyJwt } from 'utils/jwt'
+import { reIssueAccessToken } from 'services/session.service'
 
 export const userTokenMiddleware = async (
   req: Request,

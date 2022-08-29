@@ -1,8 +1,8 @@
 import { FilterQuery } from 'mongoose'
 import config from 'config'
 
-import SessionModel, { SessionModelDocument } from '../models/session.model'
-import { signJwt, verifyJwt } from '../utils/jwt'
+import SessionModel, { SessionModelDocument } from 'models/session.model'
+import { signJwt, verifyJwt } from 'utils/jwt'
 import { get } from 'lodash'
 import { findUser } from './user.service'
 

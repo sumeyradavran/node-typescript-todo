@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
-import { CreateUserInput } from '../schemas/user.schema'
-import { createUser } from '../services/user.service'
-import logger from '../utils/logger'
+import { CreateUserInput } from 'schemas/user.schema'
+import { createUser } from 'services/user.service'
+import logger from 'utils/logger'
 
 export async function createUserController(
   req: Request<{}, {}, CreateUserInput['body']>,

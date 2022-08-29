@@ -2,10 +2,10 @@ import express from 'express'
 import dotenv from 'dotenv'
 dotenv.config()
 import config from 'config'
-import connect from './src/utils/database'
-import logger from './src/utils/logger'
-import { routes } from './src/routes'
-import { userTokenMiddleware } from './src/middlewares/userTokenMiddleware'
+import connect from 'utils/database'
+import logger from 'utils/logger'
+import { routes } from 'routes'
+import { userTokenMiddleware } from 'middlewares/userTokenMiddleware'
 
 const port = config.get<number>('port')
 const app = express()
