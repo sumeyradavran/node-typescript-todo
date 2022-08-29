@@ -49,3 +49,6 @@ export async function reIssueAccessToken({
 
   return accessToken
 }
+export async function deleteSession(query: FilterQuery<SessionModelDocument>) {
+  return SessionModel.updateOne(query, { valid: false })
+}

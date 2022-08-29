@@ -1,6 +1,7 @@
 import { Express } from 'express'
 import {
   createUserSessionHandler,
+  deleteUserSessionHandler,
   getUserSessionsHandler,
 } from '../controllers/session.controller'
 import { createUserController } from '../controllers/user.controller'
@@ -21,4 +22,5 @@ export const routes = (app: Express) => {
     createUserSessionHandler
   )
   app.get('/api/sessions', getUserMiddleware, getUserSessionsHandler)
+  app.delete('/api/sessions', getUserMiddleware, deleteUserSessionHandler)
 }
