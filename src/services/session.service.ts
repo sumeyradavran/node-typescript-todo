@@ -16,7 +16,7 @@ export async function createSession(userId: string, userAgent: string) {
     })
 }
 export async function findSessions(query: FilterQuery<SessionModelDocument>) {
-  return SessionModel.find(query).lean()
+  return SessionModel.find(query)
 }
 export async function reIssueAccessToken({
   refreshToken,

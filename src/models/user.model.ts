@@ -22,9 +22,17 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true
+    },
+    toObject: {
+      virtuals: true
+    }
   }
 )
-
+userSchema.virtual('id').get(function () {
+  return this._id.toHexString()
+})
 userSchema.pre('save', async function (next) {
   const user = this as UserModelDocument
   // if password is not being changed

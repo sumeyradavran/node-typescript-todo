@@ -17,9 +17,17 @@ const sessionSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true
+    },
+    toObject: {
+      virtuals: true
+    }
   }
 )
-
+sessionSchema.virtual('id').get(function () {
+  return this._id.toHexString()
+})
 const SessionModel = mongoose.model<SessionModelDocument>(
   'Session',
   sessionSchema
