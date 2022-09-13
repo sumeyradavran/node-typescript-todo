@@ -11,3 +11,4 @@ ACCESS_TOKEN_PUBLIC_KEY
 REFRESH_PRIVATE_KEY
 REFRESH_PUBLIC_KEY
 ```
+This project has been developed thanks to the tutorial of [TomDoesTech](https://github.com/TomDoesTech/REST-API-Tutorial-Updated)
